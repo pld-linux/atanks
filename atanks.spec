@@ -16,21 +16,21 @@ URL:		http://atanks.sourceforge.net/
 BuildRequires:	allegro-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	_bindir	%{_prefix}/games
+%define		_bindir		%{_prefix}/games
 
 %description
-Atomic Tanks is a Scorched Earth clone similar to the Worms series of games.
-Annihilate the other tanks to earn money, then spend it on bigger and
-better shields and weapons to wipe out the opposition. Features a wide
-array of weapons, AI players, destructible landscape, weather, parachutes,
-teleports and a wide range of other features.
+Atomic Tanks is a Scorched Earth clone similar to the Worms series of
+games. Annihilate the other tanks to earn money, then spend it on
+bigger and better shields and weapons to wipe out the opposition.
+Features a wide array of weapons, AI players, destructible landscape,
+weather, parachutes, teleports and a wide range of other features.
 
 %description -l pl
-Atomic Tanks to klon Scorched Earth, podobny do serii gier ,,Worms''. Zniszcz
-inne czo³gi ¿eby zarobiæ pieni±dze, potem wydaj je na wiêksze i lepsze
-os³ony i broñ ¿eby zmia¿d¿yæ przeciwników. Zaletami gry s±: du¿y
-asortyment broni, gracze sterowani przez komputer, niszczalny teren, ró¿ne
-warunki pogodowe, spadochrony, teleporty i inne.
+Atomic Tanks to klon Scorched Earth, podobny do serii gier ,,Worms''.
+Zniszcz inne czo³gi ¿eby zarobiæ pieni±dze, potem wydaj je na wiêksze
+i lepsze os³ony i broñ ¿eby zmia¿d¿yæ przeciwników. Zaletami gry s±:
+du¿y asortyment broni, gracze sterowani przez komputer, niszczalny
+teren, ró¿ne warunki pogodowe, spadochrony, teleporty i inne.
 
 %prep
 %setup -q -n %{name}
