@@ -38,7 +38,8 @@ warunki pogodowe, spadochrony, teleporty i inne.
 
 %build
 %{__make} \
-	DATA_DIR="%{_datadir}/games/%{name}"
+	DATA_DIR="%{_datadir}/games/%{name}" \
+	CFLAGS="%{rpmcflags} -Iinclude"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -46,6 +47,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/games/%{name}} \
 	$RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 install *.dat $RPM_BUILD_ROOT%{_datadir}/games/%{name}
+install {credits,gloat,instr,revenge}.txt $RPM_BUILD_ROOT%{_datadir}/games/%{name}
 install atanks $RPM_BUILD_ROOT%{_bindir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
@@ -56,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changelog credits.txt INSTRUCTIONS README readme.linux tanks.txt TODO
+%doc Changelog INSTRUCTIONS README readme.linux tanks.txt TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/games/%{name}
 %{_desktopdir}/*
