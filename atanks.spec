@@ -5,7 +5,7 @@ Version:	1.1.0
 Release:	1
 Epoch:		1
 License:	GPL
-Group:		X11/Application/Games
+Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	27e47c942dd95f1b4ac72216c8f30d30
 Source1:	%{name}.desktop
