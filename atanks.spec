@@ -27,10 +27,11 @@ weather, parachutes, teleports and a wide range of other features.
 
 %description -l pl
 Atomic Tanks to klon Scorched Earth, podobny do serii gier ,,Worms''.
-Zniszcz inne czo³gi ¿eby zarobiæ pieni±dze, potem wydaj je na wiêksze
-i lepsze os³ony i broñ ¿eby zmia¿d¿yæ przeciwników. Zaletami gry s±:
-du¿y asortyment broni, gracze sterowani przez komputer, niszczalny
-teren, ró¿ne warunki pogodowe, spadochrony, teleporty i inne.
+Trzeba zniszczyæ inne czo³gi ¿eby zarobiæ pieni±dze, potem wydaæ je na
+wiêksze i lepsze os³ony i broñ ¿eby zmia¿d¿yæ przeciwników. Zaletami
+gry s±: du¿y asortyment broni, gracze sterowani przez komputer,
+niszczalny teren, ró¿ne warunki pogodowe, spadochrony, teleporty i
+inne.
 
 %prep
 %setup -q -n %{name}
