@@ -15,8 +15,6 @@ URL:		http://atanks.sourceforge.net/
 BuildRequires:	allegro-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_bindir		%{_prefix}/games
-
 %description
 Atomic Tanks is a Scorched Earth clone similar to the Worms series of
 games. Annihilate the other tanks to earn money, then spend it on
@@ -38,16 +36,16 @@ inne.
 
 %build
 %{__make} \
-	DATA_DIR="%{_datadir}/games/%{name}" \
+	DATA_DIR="%{_datadir}/%{name}" \
 	CFLAGS="%{rpmcflags} -Iinclude"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/games/%{name}} \
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}} \
 	$RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
-install *.dat $RPM_BUILD_ROOT%{_datadir}/games/%{name}
-install {credits,gloat,instr,revenge}.txt $RPM_BUILD_ROOT%{_datadir}/games/%{name}
+install *.dat $RPM_BUILD_ROOT%{_datadir}/%{name}
+install {credits,gloat,instr,revenge}.txt $RPM_BUILD_ROOT%{_datadir}/%{name}
 install atanks $RPM_BUILD_ROOT%{_bindir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
@@ -60,6 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc BUGS Changelog credits.txt Help.txt instr.txt README readme.linux tanks.txt TODO
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/games/%{name}
+%{_datadir}/%{name}
 %{_desktopdir}/*
 %{_pixmapsdir}/*
