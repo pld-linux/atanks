@@ -1,0 +1,12 @@
+diff -Naur atanks/src/Makefile atanks-p/src/Makefile
+--- atanks/src/Makefile	Wed Aug 20 10:15:45 2003
++++ atanks-p/src/Makefile	Wed Sep 10 09:24:53 2003
+@@ -4,7 +4,7 @@
+ 	globaldata.o environment.o player.o virtobj.o floattext.o teleport.o physobj.o decor.o explosion.o missile.o beam.o tank.o atanks.o
+ 
+ CC  = g++
+-FLAGS = -DLINUX -DVERSION=\"${VERSION}\" -DDATA_DIR=\".\"
++FLAGS = -DLINUX -DVERSION=\"${VERSION}\" -DDATA_DIR=\"${DATA_DIR}\"
+ OUTPUT = ../atanks
+ WFLAGS = 
+ OFLAGS = 
