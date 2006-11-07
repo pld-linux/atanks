@@ -61,5 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc BUGS Changelog credits.txt Help.txt instr.txt README readme.linux tanks.txt TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
