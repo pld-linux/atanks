@@ -11,7 +11,6 @@ Source0:	http://dl.sourceforge.net/atanks/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-datadir.patch
-Patch1:		%{name}-gcc34.patch
 URL:		http://atanks.sourceforge.net/
 BuildRequires:	allegro-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,7 +33,6 @@ inne.
 %prep
 %setup -q -n %{name}
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__make} \
