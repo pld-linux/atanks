@@ -1,13 +1,13 @@
 Summary:	Atomic Tanks - a game similiar to Scorched Earth and Worms
 Summary(pl):	Atomic Tanks - gra podobna do Scorched Earth oraz Worms
 Name:		atanks
-Version:	1.1.0
-Release:	4
+Version:	2.0
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/atanks/%{name}-%{version}.tar.gz
-# Source0-md5:	27e47c942dd95f1b4ac72216c8f30d30
+# Source0-md5:	1648632a530d0a9aaf6d3ebaca2d3f00
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-datadir.patch
@@ -56,7 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc BUGS Changelog credits.txt Help.txt instr.txt README readme.linux tanks.txt TODO
+%doc BUGS Changelog credits.txt Help.txt instr.txt README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_desktopdir}/*.desktop
