@@ -58,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc BUGS Changelog credits.txt Help.txt instr.txt README readme.linux tanks.txt TODO
+%doc BUGS Changelog credits.txt Help.txt instr.txt README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_desktopdir}/*.desktop
