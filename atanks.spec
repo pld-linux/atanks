@@ -1,5 +1,5 @@
 Summary:	Atomic Tanks - a game similiar to Scorched Earth and Worms
-Summary(pl):	Atomic Tanks - gra podobna do Scorched Earth oraz Worms
+Summary(pl.UTF-8):   Atomic Tanks - gra podobna do Scorched Earth oraz Worms
 Name:		atanks
 Version:	2.0
 Release:	1
@@ -23,12 +23,12 @@ bigger and better shields and weapons to wipe out the opposition.
 Features a wide array of weapons, AI players, destructible landscape,
 weather, parachutes, teleports and a wide range of other features.
 
-%description -l pl
+%description -l pl.UTF-8
 Atomic Tanks to klon Scorched Earth, podobny do serii gier ,,Worms''.
-Trzeba zniszczyæ inne czo³gi ¿eby zarobiæ pieni±dze, potem wydaæ je na
-wiêksze i lepsze os³ony i broñ ¿eby zmia¿d¿yæ przeciwników. Zaletami
-gry s±: du¿y asortyment broni, gracze sterowani przez komputer,
-niszczalny teren, ró¿ne warunki pogodowe, spadochrony, teleporty i
+Trzeba zniszczyÄ‡ inne czoÅ‚gi Å¼eby zarobiÄ‡ pieniÄ…dze, potem wydaÄ‡ je na
+wiÄ™ksze i lepsze osÅ‚ony i broÅ„ Å¼eby zmiaÅ¼dÅ¼yÄ‡ przeciwnikÃ³w. Zaletami
+gry sÄ…: duÅ¼y asortyment broni, gracze sterowani przez komputer,
+niszczalny teren, rÃ³Å¼ne warunki pogodowe, spadochrony, teleporty i
 inne.
 
 %prep
