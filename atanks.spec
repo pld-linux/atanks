@@ -1,5 +1,5 @@
 Summary:	Atomic Tanks - a game similiar to Scorched Earth and Worms
-Summary(pl.UTF-8):   Atomic Tanks - gra podobna do Scorched Earth oraz Worms
+Summary(pl.UTF-8):	Atomic Tanks - gra podobna do Scorched Earth oraz Worms
 Name:		atanks
 Version:	2.0
 Release:	1
