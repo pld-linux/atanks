@@ -1,11 +1,11 @@
---- atanks/src/Makefile.orig	2006-12-20 02:27:50.000000000 +0100
-+++ atanks/src/Makefile	2007-01-12 20:46:42.000000000 +0100
+--- src/Makefile.orig	2007-04-04 10:16:17.000000000 +0200
++++ src/Makefile	2007-04-04 10:16:48.000000000 +0200
 @@ -4,7 +4,7 @@
  	globaldata.o environment.o player.o virtobj.o floattext.o teleport.o physobj.o decor.o explosion.o missile.o beam.o tank.o atanks.o fade.o perlin.o sky.o 
  
  CC  = g++
--FLAGS = -DLINUX -DVERSION=\"2.0\" -DDATA_DIR=\".\"
-+FLAGS = -DLINUX -DVERSION=\"2.0\" -DDATA_DIR=\"${DATA_DIR}\"
+-FLAGS = -DLINUX -DVERSION=\"2.2\" -DDATA_DIR=\".\"
++FLAGS = -DLINUX -DVERSION=\"2.2\" -DDATA_DIR=\"${DATA_DIR}\"
  OUTPUT = ../atanks
  WFLAGS = 
  OFLAGS = 
