@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Atomic Tanks
 Comment=A game similiar to Scorched Earth and Worms
 Comment[pl]=Gra podobna do Scorched Earth oraz Worms
-Icon=atanks.png
+Icon=atanks
 Exec=atanks
 Terminal=false
 Type=Application
