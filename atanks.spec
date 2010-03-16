@@ -8,8 +8,6 @@ License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://downloads.sourceforge.net/atanks/%{name}-%{version}.tar.gz
 # Source0-md5:	451ddeb228e263ff6f90a21e8cf7783e
-Source1:	%{name}.desktop
-Source2:	%{name}.png
 Patch0:		%{name}-flags.patch
 Patch1:		%{name}-install.patch
 Patch2:		%{name}-desktop.patch
