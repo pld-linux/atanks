@@ -1,18 +1,20 @@
 Summary:	Atomic Tanks - a game similiar to Scorched Earth and Worms
 Summary(pl.UTF-8):	Atomic Tanks - gra podobna do Scorched Earth oraz Worms
 Name:		atanks
-Version:	2.3
+Version:	4.4
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/atanks/%{name}-%{version}.tar.gz
-# Source0-md5:	9b717e7922a7ff2bdc55abc42f76e88e
+Source0:	http://downloads.sourceforge.net/atanks/%{name}-%{version}.tar.gz
+# Source0-md5:	451ddeb228e263ff6f90a21e8cf7783e
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-Patch0:		%{name}-datadir.patch
+Patch0:		%{name}-flags.patch
+Patch1:		%{name}-install.patch
+Patch2:		%{name}-desktop.patch
 URL:		http://atanks.sourceforge.net/
-BuildRequires:	allegro-devel
+BuildRequires:	allegro-devel >= 4.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -23,41 +25,44 @@ Features a wide array of weapons, AI players, destructible landscape,
 weather, parachutes, teleports and a wide range of other features.
 
 %description -l pl.UTF-8
-Atomic Tanks to klon Scorched Earth, podobny do serii gier ,,Worms''.
-Trzeba zniszczyć inne czołgi żeby zarobić pieniądze, potem wydać je na
-większe i lepsze osłony i broń żeby zmiażdżyć przeciwników. Zaletami
-gry są: duży asortyment broni, gracze sterowani przez komputer,
-niszczalny teren, różne warunki pogodowe, spadochrony, teleporty i
-inne.
+Atomic Tanks to klon Scorched Earth, podobny do serii gier "Worms". W
+grze należy niszczyć inne czołgi, aby zarobić pieniądze, które można
+przeznaczyć na nowe, lepsze tarcze oraz broń, która pomoże zwyciężyć
+przeciwników. Zaletami gry są: duży asortyment broni, komputerowi
+gracze, niszczalny teren, różne warunki pogodowe, spadochrony,
+teleporty i inne.
 
 %prep
-%setup -q -n %{name}
-%patch0 -p0
+%setup -q
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %{__make} \
-	DATA_DIR="%{_datadir}/%{name}" \
-	CFLAGS="%{rpmcflags} -Iinclude"
+	CC="%{__cc}" \
+	CPP="%{__cxx}" \
+	CFLAGS="%{rpmcflags}" \
+	LDFLAGS="%{rpmldflags}" \
+	LIBS="`allegro-config --libs`"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}} \
-	$RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
-install *.dat $RPM_BUILD_ROOT%{_datadir}/%{name}
-install {credits,gloat,instr,revenge}.txt $RPM_BUILD_ROOT%{_datadir}/%{name}
-install atanks $RPM_BUILD_ROOT%{_bindir}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+install atanks.desktop $RPM_BUILD_ROOT%{_desktopdir}
+install atanks.png  $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc BUGS Changelog credits.txt Help.txt instr.txt README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/*
+%doc Changelog credits.txt text/* README* TODO
+%attr(755,root,root) %{_bindir}/atanks
+%{_datadir}/games/%{name}
+%{_desktopdir}/atanks.desktop
+%{_pixmapsdir}/atanks.png
