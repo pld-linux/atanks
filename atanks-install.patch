@@ -1,0 +1,53 @@
+--- atanks-4.4/Makefile~	2010-03-01 14:53:49.000000000 +0100
++++ atanks-4.4/Makefile	2010-03-16 16:35:49.176143587 +0100
+@@ -19,28 +19,28 @@
+ 	FLAGS=-DLINUX $(MAKE) -C src
+ 
+ install: 
+-	mkdir -p ${BINDIR}
+-	$(INSTALL) -g 0 -m 755 -o 0 atanks ${BINDIR}
+-	mkdir -p ${INSTALLDIR}
+-	mkdir -p ${INSTALLDIR}/button
+-	mkdir -p ${INSTALLDIR}/misc
+-	mkdir -p ${INSTALLDIR}/missile
+-	mkdir -p ${INSTALLDIR}/sound
+-	mkdir -p ${INSTALLDIR}/stock
+-	mkdir -p ${INSTALLDIR}/tank
+-	mkdir -p ${INSTALLDIR}/tankgun
+-	mkdir -p ${INSTALLDIR}/title
+-	mkdir -p ${INSTALLDIR}/text
+-	$(INSTALL) -g 0 -m 644 -o 0 $(INCOMMON) ${INSTALLDIR}
+-	$(INSTALL) -g 0 -m 644 -o 0 button/* ${INSTALLDIR}/button
+-	$(INSTALL) -g 0 -m 644 -o 0 misc/* ${INSTALLDIR}/misc
+-	$(INSTALL) -g 0 -m 644 -o 0 missile/* ${INSTALLDIR}/missile
+-	$(INSTALL) -g 0 -m 644 -o 0 sound/* ${INSTALLDIR}/sound
+-	$(INSTALL) -g 0 -m 644 -o 0 stock/* ${INSTALLDIR}/stock
+-	$(INSTALL) -g 0 -m 644 -o 0 tank/* ${INSTALLDIR}/tank
+-	$(INSTALL) -g 0 -m 644 -o 0 tankgun/* ${INSTALLDIR}/tankgun
+-	$(INSTALL) -g 0 -m 644 -o 0 title/* ${INSTALLDIR}/title
+-	$(INSTALL) -g 0 -m 644 -o 0 text/* ${INSTALLDIR}/text
++	mkdir -p $(DESTDIR)${BINDIR}
++	$(INSTALL) atanks $(DESTDIR)${BINDIR}
++	mkdir -p $(DESTDIR)${INSTALLDIR}
++	mkdir -p $(DESTDIR)${INSTALLDIR}/button
++	mkdir -p $(DESTDIR)${INSTALLDIR}/misc
++	mkdir -p $(DESTDIR)${INSTALLDIR}/missile
++	mkdir -p $(DESTDIR)${INSTALLDIR}/sound
++	mkdir -p $(DESTDIR)${INSTALLDIR}/stock
++	mkdir -p $(DESTDIR)${INSTALLDIR}/tank
++	mkdir -p $(DESTDIR)${INSTALLDIR}/tankgun
++	mkdir -p $(DESTDIR)${INSTALLDIR}/title
++	mkdir -p $(DESTDIR)${INSTALLDIR}/text
++	$(INSTALL) $(INCOMMON) $(DESTDIR)${INSTALLDIR}
++	$(INSTALL) button/* $(DESTDIR)${INSTALLDIR}/button
++	$(INSTALL) misc/* $(DESTDIR)${INSTALLDIR}/misc
++	$(INSTALL) missile/* $(DESTDIR)${INSTALLDIR}/missile
++	$(INSTALL) sound/* $(DESTDIR)${INSTALLDIR}/sound
++	$(INSTALL) stock/* $(DESTDIR)${INSTALLDIR}/stock
++	$(INSTALL) tank/* $(DESTDIR)${INSTALLDIR}/tank
++	$(INSTALL) tankgun/* $(DESTDIR)${INSTALLDIR}/tankgun
++	$(INSTALL) title/* $(DESTDIR)${INSTALLDIR}/title
++	$(INSTALL) text/* $(DESTDIR)${INSTALLDIR}/text
+ 
+ user:
+ 	INSTALLDIR=./ FLAGS=-DLINUX $(MAKE) -C src
