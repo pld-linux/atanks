@@ -13,6 +13,7 @@ Patch1:		%{name}-install.patch
 Patch2:		%{name}-desktop.patch
 URL:		http://atanks.sourceforge.net/
 BuildRequires:	allegro-devel >= 4.4.0
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
