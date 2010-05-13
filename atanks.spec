@@ -11,6 +11,7 @@ Source0:	http://downloads.sourceforge.net/atanks/%{name}-%{version}.tar.gz
 Patch0:		%{name}-flags.patch
 Patch1:		%{name}-install.patch
 Patch2:		%{name}-desktop.patch
+Patch3:		%{name}-mkdir.patch
 URL:		http://atanks.sourceforge.net/
 BuildRequires:	allegro-devel >= 4.4.0
 BuildRequires:	libstdc++-devel
@@ -36,6 +37,7 @@ teleporty i inne.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__make} \
