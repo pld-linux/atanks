@@ -1,17 +1,16 @@
 Summary:	Atomic Tanks - a game similiar to Scorched Earth and Worms
 Summary(pl.UTF-8):	Atomic Tanks - gra podobna do Scorched Earth oraz Worms
 Name:		atanks
-Version:	4.6
+Version:	4.7
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://downloads.sourceforge.net/atanks/%{name}-%{version}.tar.gz
-# Source0-md5:	fc8ae5d814f112e2d155597c7b242dfd
+# Source0-md5:	3bc64c0f1ed0715f17a04a622645b2af
 Patch0:		%{name}-flags.patch
 Patch1:		%{name}-install.patch
 Patch2:		%{name}-desktop.patch
-Patch3:		%{name}-mkdir.patch
 URL:		http://atanks.sourceforge.net/
 BuildRequires:	allegro-devel >= 4.4.0
 BuildRequires:	libstdc++-devel
@@ -37,7 +36,6 @@ teleporty i inne.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 %{__make} \
@@ -45,7 +43,7 @@ teleporty i inne.
 	CPP="%{__cxx}" \
 	CFLAGS="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}" \
-	LIBS="`allegro-config --libs`"
+	LIBS="`allegro-config --libs` -lpthread"
 
 %install
 rm -rf $RPM_BUILD_ROOT
