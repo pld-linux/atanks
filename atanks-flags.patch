@@ -1,111 +1,11 @@
---- atanks-4.6/src/Makefile~	2010-05-24 18:30:23.000000000 +0200
-+++ atanks-4.6/src/Makefile	2010-05-31 10:18:47.798239764 +0200
-@@ -33,82 +33,82 @@
- $(MODULES): Makefile
+--- atanks-6.6/Makefile.orig	2021-08-12 02:31:05.000000000 +0200
++++ atanks-6.6/Makefile	2023-12-26 08:18:16.587517659 +0100
+@@ -231,8 +231,6 @@ ifeq (YES,$(DEBUG))
+     CPPFLAGS := ${CPPFLAGS} -DATANKS_DEBUG_LOGTOFILE
+   endif
  
- atanks.o: atanks.cpp globals.h main.h menucontent.h
--	$(CPP) -c atanks.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c atanks.cpp -o $@ 
+-else
+-  CXXFLAGS := -march=native ${CXXFLAGS} -O2
+ endif
  
- button.o: button.cpp button.h
--	$(CPP) -c button.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c button.cpp -o $@ 
  
- client.o: client.h client.cpp
--	$(CPP) -c client.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGSS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c client.cpp -o $@
- 
- environment.o: environment.cpp environment.h
--	$(CPP) -c environment.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c environment.cpp -o $@ 
- 
- explosion.o: explosion.cpp explosion.h
--	$(CPP) -c explosion.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c explosion.cpp -o $@ 
- 
- files.o: files.cpp files.h text.h text.cpp
--	$(CPP) -c files.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c files.cpp -o $@ 
- 
- floattext.o: floattext.cpp floattext.h
--	$(CPP) -c floattext.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c floattext.cpp -o $@ 
- 
- gameloop.o: gameloop.cpp atanks.cpp main.h
--	$(CPP) -c gameloop.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c gameloop.cpp -o $@ 
- 
- globaldata.o: globaldata.cpp globaldata.h
--	$(CPP) -c globaldata.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c globaldata.cpp -o $@ 
- 
- land.o: land.cpp land.h globaldata.h environment.h
--	$(CPP) -c land.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c land.cpp -o $@ 
- 
- missile.o: missile.cpp missile.h
--	$(CPP) -c missile.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c missile.cpp -o $@ 
- 
- teleport.o: teleport.cpp teleport.h
--	$(CPP) -c teleport.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c teleport.cpp -o $@ 
- 
- physobj.o: physobj.cpp physobj.h
--	$(CPP) -c physobj.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c physobj.cpp -o $@ 
- 
- player.o: player.cpp player.h
--	$(CPP) -c player.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c player.cpp -o $@ 
- 
- tank.o: tank.cpp tank.h
--	$(CPP) -c tank.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c tank.cpp -o $@ 
- 
- team.o: team.cpp team.h
--	$(CPP) -c team.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c team.cpp -o $@ 
- 
- virtobj.o: virtobj.cpp virtobj.h
--	$(CPP) -c virtobj.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c virtobj.cpp -o $@ 
- 
- fade.o: fade.cpp
--	$(CPP) -c fade.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c fade.cpp -o $@ 
- 
- perlin.o: perlin.cpp
--	$(CPP) -c perlin.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c perlin.cpp -o $@ 
- 
- sky.o: sky.cpp sky.h
--	$(CPP) -c sky.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c sky.cpp -o $@ 
- 
- satellite.o: satellite.cpp satellite.h
--	$(CPP) -c satellite.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c satellite.cpp -o $@ 
- 
- text.o: text.cpp text.h
--	$(CPP) -c text.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c text.cpp -o $@ 
- 
- update.o: update.cpp update.h
--	$(CPP) -c update.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c update.cpp -o $@ 
- 
- network.o: network.cpp network.h
--	$(CPP) -c network.cpp -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c network.cpp -o $@ 
- 
- %.o: %.cpp %.h
--	$(CPP) -c $< -o $@ $(FLAGS) $(LFLAGS) $(OFLAGS) $(CFLAGS)
-+	$(CPP) $(CFLAGS) $(FLAGS) -c $< -o $@ 
- 
- $(OUTPUT): $(OBJECTS) $(MODULES)
--	$(CPP) $(MODULES) -o $(OUTPUT) $(FLAGS) $(LFLAGS) $(LDFLAGS) $(SFLAGS) $(CFLAGS)
-+	$(CPP) $(LDFLAGS) $(CFLAGS) $(FLAGS) $(MODULES) -o $(OUTPUT) $(LIBS)
- 	# strip $(OUTPUT)
- 
- # dependencies:

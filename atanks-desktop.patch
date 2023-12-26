@@ -1,15 +1,13 @@
---- atanks-5.2/atanks.desktop~	2011-10-03 01:05:41.000000000 +0200
-+++ atanks-5.2/atanks.desktop	2012-02-06 13:14:48.541176105 +0100
-@@ -2,9 +2,11 @@
+--- atanks-6.6/atanks.desktop.orig	2023-12-26 08:23:15.959229156 +0100
++++ atanks-6.6/atanks.desktop	2023-12-26 09:11:07.917003759 +0100
+@@ -2,8 +2,10 @@
  Name=Atomic Tanks
  Comment=Destroy your opponents' tanks.
  Comment[es]=Destruye los tanques de tus oponentes.
 +Comment[pl]=Zniszcz wrogie czołgi
  Type=Application
  Exec=atanks
--Icon=atanks.png
-+Icon=atanks
+ Icon=atanks
  Categories=Game;ArcadeGame;
  Terminal=false
 +# vi: encoding=utf-8
- 

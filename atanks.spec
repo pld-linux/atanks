@@ -1,18 +1,18 @@
 Summary:	Atomic Tanks - a game similiar to Scorched Earth and Worms
 Summary(pl.UTF-8):	Atomic Tanks - gra podobna do Scorched Earth oraz Worms
 Name:		atanks
-Version:	5.2
+Version:	6.6
 Release:	1
 Epoch:		1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://downloads.sourceforge.net/atanks/%{name}-%{version}.tar.gz
-# Source0-md5:	05bedbb7b3f50831a30b47f7776c8c1a
+Source0:	https://downloads.sourceforge.net/atanks/%{name}-%{version}.tar.gz
+# Source0-md5:	f53bbb0017d1ed79045085f6a36c85a8
 Patch0:		%{name}-flags.patch
 Patch1:		%{name}-desktop.patch
-URL:		http://atanks.sourceforge.net/
+URL:		https://atanks.sourceforge.io/
 BuildRequires:	allegro-devel >= 4.4.0
-BuildRequires:	libstdc++-devel
+BuildRequires:	libstdc++-devel >= 6:4.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,30 +36,27 @@ teleporty i inne.
 %patch1 -p1
 
 %build
+CPPFLAGS="%{rpmcppflags}" \
+CXXFLAGS="%{rpmcxxflags}" \
+LDFLAGS="%{rpmldflags}" \
 %{__make} \
-	CC="%{__cc}" \
-	CPP="%{__cxx}" \
-	CFLAGS="%{rpmcflags}" \
-	LDFLAGS="%{rpmldflags}" \
-	LIBS="`allegro-config --libs` -lpthread"
+	CXX="%{__cxx}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-cp -a atanks.desktop $RPM_BUILD_ROOT%{_desktopdir}
-cp -a atanks.png  $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changelog credits.txt text/* README* TODO
+%doc Changelog README TODO credits.txt
+%lang(ru) %doc README_ru.txt
 %attr(755,root,root) %{_bindir}/atanks
 %{_datadir}/games/%{name}
+%{_datadir}/metainfo/io.sourceforge.atanks.metainfo.xml
 %{_desktopdir}/atanks.desktop
-%{_pixmapsdir}/atanks.png
+%{_iconsdir}/hicolor/48x48/apps/atanks.png
